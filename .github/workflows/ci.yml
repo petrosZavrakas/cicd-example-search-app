@@ -13,5 +13,6 @@ jobs:
     name: Trigger manual
     runs-on: ubuntu-latest
     environment: Develop-manual
+    needs: [QA]
     steps:
       - run: echo "Yess"
