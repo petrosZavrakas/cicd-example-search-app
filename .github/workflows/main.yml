@@ -1,0 +1,10 @@
+name: CI / CD
+
+on:
+  push:
+      
+jobs:
+  qa:
+    name: QA
+    uses: ./.github/workflows/cqa.yml
+    secrets: inherit

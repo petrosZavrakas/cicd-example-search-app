@@ -1,0 +1,25 @@
+name: BuildNPM
+description: Sets up the project for faster re-use
+
+runs:
+  using: composite
+  steps:
+    - name: Use Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 14
+
+    - run: npm config set registry https://registry.npmjs.org
+      shell: bash
+
+    - name: Cache dependencies
+      id: build-npm-cache
+      uses: actions/cache@v3
+      with:
+        path: ./node_modules
+        key: modules-${{ hashFiles('package.json') }}-${{ hashFiles('package-lock.json') }}
+
+    - name: Install dependencies
+      if: ${{ steps.build-npm-cache.outputs.cache-hit != 'true' }}
+      run: npm ci --ignore-scripts --prefer-offline
+      shell: bash
