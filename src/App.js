@@ -3,7 +3,7 @@ import { CountryComponent } from './components/country-component';
 import { Error as ErrorEnum } from './components/error/error-component';
 import { FilterByRegion } from './components/filter-component';
 import SearchCountries from './components/search-component.jsx';
-import { API_KEY, COUNTRY_API_URL_BASE } from './const';
+import { API_KEY, COUNTRY_API_URL_BASE } from './consts';
 import { RegularList } from './regularList';
 //import { getCountries } from './services';
 

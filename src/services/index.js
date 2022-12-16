@@ -1,4 +1,4 @@
-import { API_KEY, COUNTRY_API_URL_BASE } from "../const.js";
+import { API_KEY, COUNTRY_API_URL_BASE } from "../consts";
 
 const fetchData = async (params) => {
     let response = [];

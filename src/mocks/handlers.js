@@ -1,5 +1,5 @@
 import { rest } from 'msw';
-import { COUNTRY_API_URL_BASE } from '../const.js';
+import { COUNTRY_API_URL_BASE } from '../consts';
 
 export const getAllCountries = ({
     response = [],
