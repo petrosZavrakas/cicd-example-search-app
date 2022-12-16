@@ -1,7 +1,7 @@
 name: CQA
 
 on:
-  workflow_call:
+  push:
 
 jobs:
   lint:
