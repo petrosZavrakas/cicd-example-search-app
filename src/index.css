@@ -38,7 +38,7 @@ img {
 }
 
 :root {
-    --bg: hsl(0, 0%, 98%);
+    --bg: hsl(0, 0%, 97%);
     --bg-offset: hsl(0, 0%, 100%);
     --text: hsl(200, 15%, 8%);
     --gray: hsl(0, 0%, 52%);
