@@ -1,0 +1,42 @@
+name: PR to merge branches
+description: Creates automaticaly a pull request to merge branches
+inputs:
+  source-branch:
+    description: 'The branch you need to merge to some other branch'
+    required: true
+    type: choice
+    options:
+      - main
+      - develop
+      - integration
+  target-branch:
+    description: 'Where the source branche needs to be merged to'
+    required: true
+    type: choice
+    options:
+      - main
+      - develop
+      - integration
+
+on:
+  workflow_dispatch:
+
+jobs:
+  merge-branches:
+    name: Merge branches
+    runs-on: ubuntu-latest
+    steps:
+      - name: Merge
+        uses: devops-infra/action-pull-request@v0.5.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          source_branch: ${{ inputs.source-branch }}
+          target_branch: ${{ inputs.target-branch }}
+          title: Merge ${{ inputs.source-branch }} to ${{ inputs.target-branch }}
+          body: "**Automated pull request for merging ${{ inputs.target-branch }}**"
+          label: automated-merge
+          reviewer: petrosZavrakas
+          assignee: petrosZavrakas
+          get_diff: true
+          ignore_users: "dependabot"
+          allow_no_diff: false
