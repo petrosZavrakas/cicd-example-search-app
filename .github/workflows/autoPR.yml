@@ -1,4 +1,4 @@
-name: PR to merge branches
+name: Auto PR to merge branches
 description: Creates automaticaly a pull request to merge branches
 inputs:
   source-branch:
@@ -20,6 +20,7 @@ inputs:
 
 on:
   workflow_dispatch:
+  push: [develop]
 
 jobs:
   merge-branches:
