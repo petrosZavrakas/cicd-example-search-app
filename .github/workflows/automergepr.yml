@@ -1,4 +1,4 @@
-name: Create auto PR
+name: Auto merge PR
 description: Creates automaticaly a pull request to merge branches
 inputs:
   source-branch:
