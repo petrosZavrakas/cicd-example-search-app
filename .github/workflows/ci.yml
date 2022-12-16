@@ -14,4 +14,4 @@ jobs:
     runs-on: ubuntu-latest
     environment: Develop-manual
     steps:
-      run: echo "Yess"
+      - run: echo "Yess"
