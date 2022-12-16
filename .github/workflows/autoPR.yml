@@ -20,7 +20,6 @@ inputs:
 
 on:
   workflow_dispatch:
-  push: [develop]
 
 jobs:
   merge-branches:
