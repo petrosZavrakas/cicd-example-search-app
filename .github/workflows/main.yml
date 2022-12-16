@@ -4,7 +4,24 @@ on:
   push:
       
 jobs:
-  qa:
-    name: QA
-    uses: ./.github/workflows/cqa.yml
-    secrets: inherit
+  # qa:
+  #   name: QA
+  #   uses: ./.github/workflows/cqa.yml
+  #   secrets: inherit
+
+  deploy-heroku:
+    name: Deploy to heroku
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Build NPM
+        uses: ./.github/actions/setup
+
+      - name: Dpl to heroku
+        uses: tiagogouvea/github-dpl-action@master
+        with:
+          provider: 'heroku'
+          app: 'cicd-example-search-github'
+          api-key: 'd780cc03-2422-4ccc-9985-b7e3a3de5e3a'

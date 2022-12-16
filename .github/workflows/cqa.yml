@@ -11,7 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup
+      - name: Build NPM
         uses: ./.github/actions/setup
 
       - name: Run linter
@@ -24,7 +24,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup
+      - name: Build NPM
         uses: ./.github/actions/setup
 
       - name: Run Unit Tests
