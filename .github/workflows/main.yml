@@ -16,9 +16,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Build NPM
-        uses: ./.github/actions/setup
-
       - name: Dpl to heroku
         uses: tiagogouvea/github-dpl-action@master
         with:
