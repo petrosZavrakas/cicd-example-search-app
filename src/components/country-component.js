@@ -1,5 +1,5 @@
 import React from 'react';
-import { WIKI_INFO_URL_BASE } from "../const";
+import { WIKI_INFO_URL_BASE } from "../const.js";
 
 export const CountryComponent = ({ country }) => {
     const {

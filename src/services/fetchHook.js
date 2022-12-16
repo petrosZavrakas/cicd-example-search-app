@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { COUNTRY_API_URL_BASE, API_KEY } from "../const";
+import { COUNTRY_API_URL_BASE, API_KEY } from "../const.js";
 
 /**
  * custom hook
