@@ -1,25 +1,24 @@
 name: Auto merge PR
-description: Creates automaticaly a pull request to merge branches
-inputs:
-  source-branch:
-    description: 'The branch you need to merge to some other branch'
-    required: true
-    type: choice
-    options:
-      - main
-      - develop
-      - integration
-  target-branch:
-    description: 'Where the source branche needs to be merged to'
-    required: true
-    type: choice
-    options:
-      - main
-      - develop
-      - integration
 
 on:
   workflow_dispatch:
+    inputs:
+      source-branch:
+        description: 'The branch you need to merge to some other branch'
+        required: true
+        type: choice
+        options:
+          - main
+          - develop
+          - integration
+      target-branch:
+        description: 'Where the source branche needs to be merged to'
+        required: true
+        type: choice
+        options:
+          - main
+          - develop
+          - integration
 
 jobs:
   merge-branches:
