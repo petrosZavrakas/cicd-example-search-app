@@ -2,16 +2,25 @@ name: CI
 
 on:
   push:
-      
+# push: [master, develop]
+
 jobs:
   qa:
     name: QA
     uses: ./.github/workflows/cqa.yml
     secrets: inherit
 
-  manual_trigger:
-    name: Trigger manual
+  build:
+    name: Build the app
     runs-on: ubuntu-latest
-    environment: Develop-manual
+    needs: [QA]
+    if: github.ref_name == 'develop'
     steps:
-      - run: echo "Yess"
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Build NPM
+        uses: ./.github/actions/setup
+
+      - name: Run linter
+        run: npm build
