@@ -2,7 +2,8 @@ name: CI
 
 on:
   push:
-      
+# push: [master, develop]
+
 jobs:
   qa:
     name: QA
