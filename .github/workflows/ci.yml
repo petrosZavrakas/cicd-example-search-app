@@ -5,6 +5,7 @@ on:
 # push: [master, develop]
 
 jobs:
+  # cqa.yml workflow contains all tests we want to run before build the app
   qa:
     name: QA
     uses: ./.github/workflows/cqa.yml
@@ -13,7 +14,7 @@ jobs:
   build:
     name: Build the app
     runs-on: ubuntu-latest
-    needs: [QA]
+    needs: [qa]
     if: github.ref_name == 'develop'
     steps:
       - name: Checkout
