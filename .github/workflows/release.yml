@@ -1,0 +1,15 @@
+name: Release
+
+on: 
+  release:
+    types: 
+      prereleased: [released]
+
+jobs:
+  test:
+    name: Prepare pipeline environment
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "ok"
+      
